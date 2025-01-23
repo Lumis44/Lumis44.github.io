@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Lumis44.github.io</id>
+    <title>Gridea</title>
+    <updated>2025-01-23T05:25:46.327Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Lumis44.github.io"/>
+    <link rel="self" href="https://Lumis44.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://Lumis44.github.io/images/avatar.png</logo>
+    <icon>https://Lumis44.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2025, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[三日报（1）]]></title>
+        <id>https://Lumis44.github.io/post/san-ri-bao/</id>
+        <link href="https://Lumis44.github.io/post/san-ri-bao/">
+        </link>
+        <updated>2025-01-22T10:07:17.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="协议">协议</h3>
+<p>协议就是一堆规定，规定的东西就得按照规定的填。非常大量的协议共同构成了我们目前所使用的网络</p>
+<h3 id="网络">网络</h3>
+<h4 id="物理层">物理层</h4>
+<p>物理设备，如主机等等</p>
+<h4 id="链路层">链路层</h4>
+<p>从电信号转化成其他硬盘能够读的一个帧</p>
+<h4 id="网络层">网络层</h4>
+<p>APR协议，IP协议</p>
+<blockquote>
+<p>IP：地址</p>
+</blockquote>
+<h4 id="传输层">传输层</h4>
+<p>TCP/UDP</p>
+<h4 id="应用层">应用层</h4>
+<p>HTTP/FTP</p>
+<blockquote>
+<h4 id="应用类的协议被包裹在一个tcp和udp等传输协层的协议中">应用类的协议被包裹在一个TCP和UDP等传输协层的协议中</h4>
+</blockquote>
+<h3 id="域名和dns">域名和DNS</h3>
+<h4 id="ip地址">ip地址</h4>
+<p>在公网上表示地址的东西</p>
+<h4 id="域名">域名</h4>
+<p>用于ip地址的替代，方便用户记忆和宣传</p>
+<h4 id="dns解析">DNS解析</h4>
+<p>一种解析域名为ip地址的方式</p>
+<h5 id="dns解析的本质">DNS解析的本质</h5>
+<p>向公网上的一个域名解析服务器（114.114.114.114）发送解析请求，这个服务器收到请求之后就会把这个域名转换为域名绑定的ip地址</p>
+<h3 id="端口">端口</h3>
+<p>端口并不适用一个真是村的在口子，而是通过程序实现的一种网络分流方式</p>
+<h5 id="端口的范围">端口的范围</h5>
+<p>0-65535</p>
+<blockquote>
+<p>端口号是用16位二进制表示的：所以可以有2的十六次方个不同的端口号，</p>
+<p>即65536个。其中，0被保留为无效端口</p>
+</blockquote>
+<h5 id="端口的意义">端口的意义</h5>
+<p>把互联网流量分流到适应它的程序里。0端口不存在，为非常端口</p>
+<h5 id="常见的端口">常见的端口</h5>
+<p>80（http）、443（https）、20（ftp）、21（ftp控制）、22（ssh）、3306（数据库）、8080</p>
+<blockquote>
+<p>https中s为加密</p>
+</blockquote>
+<h3 id="http协议报文结构">http协议报文结构</h3>
+<p><font style="color:rgb(51, 51, 51);">客户端发送一个HTTP请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据四个部分组成</font></p>
+<figure data-type="image" tabindex="1"><img src="https://Lumis44.github.io/post-images/1737548202549.png" alt="" loading="lazy"></figure>
+<ul>
+<li><strong><font style="color:rgb(51, 51, 51);">请求行</font></strong><font style="color:rgb(51, 51, 51);">（Request Line）：</font>
+<ul>
+<li><strong><font style="color:rgb(51, 51, 51);">方法</font></strong><font style="color:rgb(51, 51, 51);">：如 GET、POST、PUT、DELETE等，指定要执行的操作。</font></li>
+<li><strong><font style="color:rgb(51, 51, 51);">请求 URI</font></strong><font style="color:rgb(51, 51, 51);">（统一资源标识符）：请求的资源路径，通常包括主机名、端口号（如果非默认）、路径和查询字符串。</font></li>
+<li><strong><font style="color:rgb(51, 51, 51);">HTTP 版本</font></strong><font style="color:rgb(51, 51, 51);">：如 HTTP/1.1 或 HTTP/2。</font></li>
+</ul>
+</li>
+</ul>
+<p><font style="color:rgb(51, 51, 51);">请求行的格式示例：</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;GET /index.html HTTP/1.1&lt;/font&gt;</code></p>
+<ul>
+<li><strong><font style="color:rgb(51, 51, 51);">请求头</font></strong><font style="color:rgb(51, 51, 51);">（Request Headers）：</font>
+<ul>
+<li><font style="color:rgb(51, 51, 51);">包含了客户端环境信息、请求体的大小（如果有）、客户端支持的压缩类型等。</font></li>
+<li><font style="color:rgb(51, 51, 51);">常见的请求头包括</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;Host&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">、</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;User-Agent&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">、</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;Accept&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">、</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;Accept-Encoding&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">、</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;Content-Length&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">等。</font></li>
+</ul>
+</li>
+<li><strong><font style="color:rgb(51, 51, 51);">空行</font></strong><font style="color:rgb(51, 51, 51);">：</font>
+<ul>
+<li><font style="color:rgb(51, 51, 51);">请求头和请求体之间的分隔符，表示请求头的结束。</font></li>
+</ul>
+</li>
+<li><strong><font style="color:rgb(51, 51, 51);">请求体</font></strong><font style="color:rgb(51, 51, 51);">（可选）：</font>
+<ul>
+<li><font style="color:rgb(51, 51, 51);">在某些类型的HTTP请求（如 POST 和 PUT）中，请求体包含要发送给服务器的数据。</font></li>
+</ul>
+</li>
+</ul>
+<h3 id="font-stylecolorrgb51-51-51url-统一资源定位器font"><font style="color:rgb(51, 51, 51);">URL - 统一资源定位器</font></h3>
+<p><font style="color:rgb(51, 51, 51);">URL 是一个网页地址。</font></p>
+<p><font style="color:rgb(51, 51, 51);">URL可以由字母组成，如&quot;runoob.com&quot;，或互联网协议（IP）地址： 192.68.20.50。大多数人进入网站使用网站域名来访问，因为 名字比数字更容易记住。</font></p>
+<p><font style="color:rgb(51, 51, 51);">Web浏览器通过URL从Web服务器请求页面。</font></p>
+<p><font style="color:rgb(51, 51, 51);">当点击 HTML 页面中的某个链接时，对应的 <a> 标签指向万维网上的一个地址。</font></p>
+<p><font style="color:rgb(51, 51, 51);">一个统一资源定位器(URL) 用于定位万维网上的文档。</font></p>
+<h3 id="font-stylecolorrgb51-51-51get请求和post请求font"><font style="color:rgb(51, 51, 51);">GET请求和POST请求</font></h3>
+<h4 id="二者区别">二者区别</h4>
+<ul>
+<li>GET请求参数是通过URL进行传递的，POST请求的参数包含在请求体当中。POST请求的参数包含在请求体当中。</li>
+</ul>
+<blockquote>
+<p>GET请求用户肉眼可见，而POST请求在请求体当中，相当于绕了个弯子，用户不能肉眼可见，但抓包可以看见</p>
+<p>但这时再进行加密，比如说转化为编码的形式，就算抓包肉眼也无法读，这样就更安全些，这就是为什么要用https和ftps。</p>
+</blockquote>
+<p>POST请求比GET请求更安全，因为参数直接暴露在URL中，所以，GET请求不能用来传递敏感信息</p>
+<ul>
+<li>GET请求再URL中传递的参数是有长度限制的（在http协议中并没有对URL的长度进行限制，限制是特定的浏览器以及服务器对他的限制，不同浏览器限制的长度不同），POST没有长度限制（最多2mb，大数据可以多次传送）</li>
+<li>GET请求进行URL编码（百分号编码），POST请求支持多种编码方式</li>
+<li>GET请求在浏览器回退的时候是无害的，POST请求会再次提交数据</li>
+</ul>
+<h4 id="重大区别">重大区别</h4>
+<figure data-type="image" tabindex="2"><img src="https://Lumis44.github.io/post-images/1737548192284.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>对于GET请求，浏览器会把http header（请求头）和data（数据）一起发送出去，服务器响应<font style="background-color:#FBDE28;">200</font>，请求成功。</li>
+<li>对于POST请求，浏览器先发送header，服务器会响应<font style="background-color:#FBDE28;">100</font>（已经收到请求的第一部分），浏览器再次发送data，服务器返回<font style="background-color:#FBDE28;">200</font>，请求成功</li>
+<li>在发GET请求时只能发GET请求，因为它只能通过URL去传递。但是POST请求在发送时发get请求</li>
+</ul>
+<blockquote>
+<p>也就是POST请求既可以在body里传POST请求的东西，又可以在URL里人为添加GET请求</p>
+</blockquote>
+<ul>
+<li>GET方法由于受到URL长度的限制，只能传递大约1024字节；POST传输的数据量大，可以达到2M</li>
+</ul>
+<h3 id="tcpip">TCP/IP</h3>
+<blockquote>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 是用于因特网 (Internet) 的通信协议。</font></p>
+</blockquote>
+<h5 id="font-stylecolorrgb51-51-51计算机通信协议computer-communication-protocolfont"><font style="color:rgb(51, 51, 51);">计算机通信协议（Computer Communication Protocol）</font></h5>
+<p><font style="color:rgb(51, 51, 51);">计算机通信协议是对那些计算机必须遵守以便彼此通信的的规则的描述。</font></p>
+<h5 id="font-stylecolorrgb51-51-51什么是-tcpipfont"><font style="color:rgb(51, 51, 51);">什么是 TCP/IP？</font></h5>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 是供已连接因特网的计算机进行通信的通信协议。</font></p>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 指传输控制协议/网际协议（</font><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">T</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">ransmission</font>****<font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);"> </font></strong><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">C</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">ontrol</font>****<font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);"> </font></strong><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">P</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">rotocol</font></strong><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">/</font><font style="color:rgb(51, 51, 51);"> </font><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">I</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">nternet</font>****<font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);"> </font></strong><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">P</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">rotocol</font></strong><font style="color:rgb(51, 51, 51);">）。</font></p>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 定义了电子设备（比如计算机）如何连入因特网，以及数据如何在它们之间传输的标准。</font></p>
+<hr>
+<h5 id="font-stylecolorrgb51-51-51在-tcpip-内部font"><font style="color:rgb(51, 51, 51);">在 TCP/IP 内部</font></h5>
+<p><font style="color:rgb(51, 51, 51);">在 TCP/IP 中包含一系列用于处理数据通信的协议：</font></p>
+<ul>
+<li><font style="color:rgb(51, 51, 51);">TCP (传输控制协议) - 应用程序之间通信</font></li>
+<li><font style="color:rgb(51, 51, 51);">UDP (用户数据报协议) - 应用程序之间的简单通信</font></li>
+<li><font style="color:rgb(51, 51, 51);">IP (网际协议) - 计算机之间的通信</font></li>
+<li><font style="color:rgb(51, 51, 51);">ICMP (因特网消息控制协议) - 针对错误和状态</font></li>
+<li><font style="color:rgb(51, 51, 51);">DHCP (动态主机配置协议) - 针对动态寻址</font></li>
+</ul>
+<h5 id="font-stylecolorrgb51-51-51tcp-使用固定的连接font"><font style="color:rgb(51, 51, 51);">TCP 使用固定的连接</font></h5>
+<p><font style="color:rgb(51, 51, 51);">TCP 用于应用程序之间的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">当应用程序希望通过 TCP 与另一个应用程序通信时，它会发送一个通信请求。这个请求必须被送到一个确切的地址。在双方&quot;握手&quot;之后，TCP 将在两个应用程序之间建立一个全双工 (full-duplex) 的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">这个全双工的通信将占用两个计算机之间的通信线路，直到它被一方或双方关闭为止。</font></p>
+<p><font style="color:rgb(51, 51, 51);">UDP 和 TCP 很相似，但是更简单，同时可靠性低于 TCP。</font></p>
+<h5 id="font-stylecolorrgb51-51-51ip-是无连接的font"><font style="color:rgb(51, 51, 51);">IP 是无连接的</font></h5>
+<p><font style="color:rgb(51, 51, 51);">IP 用于计算机之间的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 是无连接的通信协议。它不会占用两个正在通信的计算机之间的通信线路。这样，IP 就降低了对网络线路的需求。每条线可以同时满足许多不同的计算机之间的通信需要。</font></p>
+<p><font style="color:rgb(51, 51, 51);">通过 IP，消息（或者其他数据）被分割为小的独立的包，并通过因特网在计算机之间传送。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 负责将每个包路由至它的目的地。</font></p>
+<h5 id="font-stylecolorrgb51-51-51ip-路由器font"><font style="color:rgb(51, 51, 51);">IP 路由器</font></h5>
+<p><font style="color:rgb(51, 51, 51);">当一个 IP 包从一台计算机被发送，它会到达一个 IP 路由器。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 路由器负责将这个包路由至它的目的地，直接地或者通过其他的路由器。</font></p>
+<p><font style="color:rgb(51, 51, 51);">在一个相同的通信中，一个包所经由的路径可能会和其他的包不同。而路由器负责根据通信量、网络中的错误或者其他参数来进行正确地寻址。</font></p>
+<h5 id="font-stylecolorrgb51-51-51tcpipfont"><font style="color:rgb(51, 51, 51);">TCP/IP</font></h5>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 意味着 TCP 和 IP 在一起协同工作。</font></p>
+<p><font style="color:rgb(51, 51, 51);">TCP 负责应用软件（比如您的浏览器）和网络软件之间的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 负责计算机之间的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">TCP 负责将数据分割并装入 IP 包，然后在它们到达的时候重新组合它们。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 负责将包发送至接受者。</font></p>
+<h3 id="证书">证书</h3>
+<ul>
+<li>证书的方法是一种点对点认证机制</li>
+</ul>
+<h5 id="常见的有公钥加密私钥解密">常见的有：公钥加密，私钥解密</h5>
+<blockquote>
+<p>所有与这个服务器通信的人都会获得公钥，通过公钥把自己要传给服务器的数据加密，加密不可逆，用公钥加密完不能用公钥解密回来，只有操作服务器的人接到公钥加密后的数据，用他的私钥去解密，才能获得数据，这就叫<font style="background-color:#FBDE28;">非对称加密</font>。</p>
+</blockquote>
+<ul>
+<li>
+<p>如何保证安全？：证书是在服务器上的，客户通过证书提供的公钥加密一串随机串，这个加密方式只有拥有私钥的人才能解密加密之后的内容，服务器收到这个加密后的<font style="background-color:#FBDE28;">随机串</font>用私钥解密。然后双方开始用这个随机串进行加密通信，实现完全点对点通信，中间没有任何人</p>
+</li>
+<li>
+<p>这种公钥私钥的加密方式通常利用一些数学上的难题作为防止被破解的机制：<br>
+超大素数的难解性（RSA），椭圆曲线的难解性（ECC）等。</p>
+<pre><code>现在的计算机很难解，如果量子计算机实现，可能会推翻这些加密方式，因为算力很大。
+</code></pre>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[测试]]></title>
+        <id>https://Lumis44.github.io/post/ce-shi/</id>
+        <link href="https://Lumis44.github.io/post/ce-shi/">
+        </link>
+        <updated>2025-01-22T09:45:30.000Z</updated>
+        <content type="html"><![CDATA[<p>哈哈哈哈哈哈哈哈哈我终于搭好了</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://Lumis44.github.io/post/hello-gridea/</id>
+        <link href="https://Lumis44.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="https://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
