@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Lumis44.github.io</id>
+    <title>Gridea</title>
+    <updated>2025-02-12T08:06:46.390Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Lumis44.github.io"/>
+    <link rel="self" href="https://Lumis44.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://Lumis44.github.io/images/avatar.png</logo>
+    <icon>https://Lumis44.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2025, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[三日报（2）]]></title>
+        <id>https://Lumis44.github.io/post/san-ri-bao-2/</id>
+        <link href="https://Lumis44.github.io/post/san-ri-bao-2/">
+        </link>
+        <updated>2025-01-23T05:07:36.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p><font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">Linux 是一套免费使用和自由传播的类 Unix 操作系统，是一个基于 POSIX 和 UNIX 的多用户、多任务、支持多线程和多 CPU 的操作系统。</font></p>
+<p><font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">Linux 能运行主要的 UNIX 工具软件、应用程序和网络协议。它支持 32 位和 64 位硬件。Linux 继承了 Unix 以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</font></p>
+</blockquote>
+<h2 id="shell">shell</h2>
+<h3 id="shell的概念">shell的概念</h3>
+<p><font style="color:rgb(51, 51, 51);">Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。</font></p>
+<p><font style="color:rgb(51, 51, 51);">Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</font></p>
+<p><font style="color:rgb(51, 51, 51);">Ken Thompson 的 sh 是第一种 Unix Shell，Windows Explorer 是一个典型的图形界面 Shell。</font></p>
+<h3 id="font-stylecolorrgb51-51-51shell环境font"><font style="color:rgb(51, 51, 51);">shell环境</font></h3>
+<ul>
+<li>SHell编程跟js、php编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。</li>
+<li>Linux的shell种类众多，常见的又：</li>
+</ul>
+<ol>
+<li><font style="color:rgb(51, 51, 51);">Bourne Shell（/usr/bin/sh或/bin/sh）</font></li>
+<li><font style="color:rgb(51, 51, 51);">Bourne Again Shell（/bin/bash）</font></li>
+<li><font style="color:rgb(51, 51, 51);">C Shell（/usr/bin/csh）</font></li>
+<li><font style="color:rgb(51, 51, 51);">K Shell（/usr/bin/ksh）</font></li>
+<li><font style="color:rgb(51, 51, 51);">Shell for Root（/sbin/sh）</font></li>
+</ol>
+<blockquote>
+<ol>
+<li>Bash（<font style="color:rgb(51, 51, 51);">Bourne Again Shell），由于易用和免费，Bash在日常工作中被广泛使用。同时，Bash也是大多数Linux系统默认的shell.</font></li>
+<li><font style="color:rgb(51, 51, 51);">在一般情况下，人们并不区分 Bourne Shell 和 Bourne Again Shell，所以，像 </font><strong><font style="color:rgb(51, 51, 51);">#!/bin/sh</font></strong><font style="color:rgb(51, 51, 51);">，它同样也可以改为 </font><strong><font style="color:rgb(51, 51, 51);">#!/bin/bash</font></strong><font style="color:rgb(51, 51, 51);">。</font></li>
+<li><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">#!</font></strong><font style="color:rgb(51, 51, 51);"> 告诉系统其后路径所指定的程序即是解释此脚本文件的 Shell 程序。</font></li>
+</ol>
+</blockquote>
+<h3 id="shell脚本">shell脚本</h3>
+<blockquote>
+<p><font style="color:rgb(51, 51, 51);">Shell 脚本（shell script），是一种为 shell 编写的脚本程序。</font></p>
+<p><font style="color:rgb(51, 51, 51);">业界所说的 shell 通常都是指 shell 脚本，shell 和 shell script 是两个不同的概念。</font></p>
+</blockquote>
+<h4 id="第一个shell脚本">第一个shell脚本</h4>
+<p><font style="color:rgb(51, 51, 51);">打开文本编辑器(可以使用 vi/vim 命令来创建文件)，</font><font style="color:rgb(51, 51, 51);background-color:#D8DAD9;">新建一个文件 test.sh，扩展名为 sh（sh代表shell）</font><font style="color:rgb(51, 51, 51);">，扩展名并不影响脚本执行，见名知意就好，如果你用 php 写 shell 脚本，扩展名就用 php 好了。</font></p>
+<p>输入一些代码，第一行一般是这样：</p>
+<pre><code class="language-plain">#！/bin/bash
+echo &quot;Hello World!&quot;
+</code></pre>
+<p>:::info</p>
+<ul>
+<li><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">#!</font></strong><font style="color:rgb(51, 51, 51);"> 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。</font></li>
+<li><font style="color:rgb(51, 51, 51);">echo 命令用于向窗口输出文本。</font></li>
+</ul>
+<p>:::</p>
+<h4 id="运行shell脚本的两种方法">运行shell脚本的两种方法</h4>
+<h5 id="作为可执行程序">作为可执行程序</h5>
+<p>将代码保存为test.sh，并cd到相应目录</p>
+<blockquote>
+<p>chmod +x ./test.sh  #使脚本具有执行权限</p>
+<p>./test.sh  #执行脚本</p>
+</blockquote>
+<p>:::info<br>
+<font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">注意，一定要写成 </font><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">./test.sh</font></strong><font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">，而不是 </font><strong><font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">test.sh</font></strong><font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找。</font></p>
+<p>:::</p>
+<h5 id="作为解释器参数">作为解释器参数</h5>
+<p><font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">这种运行方式是，直接运行解释器，其参数就是 shell 脚本的文件名，如：</font></p>
+<p><font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">/bin/sh test.sh</font></p>
+<p><font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">/bin/php test.php</font></p>
+<blockquote>
+<p><font style="color:rgb(51, 51, 51);background-color:rgb(250, 252, 253);">这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。</font></p>
+</blockquote>
+<h2 id="命令和代码的区别">命令和代码的区别</h2>
+<p>在 Linux 系统里，命令和代码虽然都是与系统交互、实现特定功能的方式，但它们存在明显的差异</p>
+<h3 id="定义和本质">定义和本质</h3>
+<ul>
+<li><strong>命令</strong>
+<ul>
+<li>命令是用户在终端中输入的、用于直接执行特定操作的指令。它是对系统提供的功能或工具的一种调用，是用户与操作系统进行交互的一种简洁方式。这些命令通常是已经编译好的可执行程序，或者是 Shell 内置的功能。</li>
+<li>例如，<code>ls</code> 命令用于列出目录内容，它是一个已经编译好的二进制程序，存放在系统的特定目录（如 <code>/bin</code> 或 <code>/usr/bin</code>）中。当用户在终端输入 <code>ls</code> 并按下回车键时，系统会找到该程序并执行它。</li>
+</ul>
+</li>
+<li><strong>代码</strong>
+<ul>
+<li>代码是由程序员编写的、用于实现特定功能的一组指令集合。它可以使用各种编程语言（如 C、Python、Shell 脚本语言等）编写，需要经过编译（对于编译型语言）或解释（对于解释型语言）后才能被计算机执行。</li>
+<li>例如，以下是一个简单的 Python 代码示例，用于打印 “Hello, World!”：</li>
+</ul>
+</li>
+</ul>
+<p>python</p>
+<pre><code class="language-python">print(&quot;Hello, World!&quot;)
+</code></pre>
+<h3 id="表现形式">表现形式</h3>
+<ul>
+<li><strong>命令</strong>
+<ul>
+<li>命令通常以简单的文本形式呈现，用户在终端中直接输入命令名称和相关参数，参数之间用空格分隔。命令的格式相对固定，一般遵循 “命令名 [选项] [参数]” 的结构。</li>
+<li>例如，<code>grep -i &quot;example&quot; file.txt</code> 中，<code>grep</code> 是命令名，<code>-i</code> 是选项（表示忽略大小写），<code>&quot;example&quot;</code> 和 <code>file.txt</code> 是参数。</li>
+</ul>
+</li>
+<li><strong>代码</strong>
+<ul>
+<li>代码通常包含在文件中，具有一定的语法结构和逻辑。代码可以包含变量、函数、控制结构（如循环、条件语句）等，以实现复杂的功能。不同的编程语言有不同的语法规则和代码风格。</li>
+<li>例如，以下是一个简单的 Shell 脚本代码，用于循环打印数字 1 到 5：</li>
+</ul>
+</li>
+</ul>
+<p>bash</p>
+<pre><code class="language-bash">#!/bin/bash
+for i in {1..5}; do
+    echo $i
+done
+</code></pre>
+<h3 id="执行方式">执行方式</h3>
+<ul>
+<li><strong>命令</strong>
+<ul>
+<li>命令可以直接在终端中输入并立即执行，系统会根据命令名称找到对应的可执行程序或内置功能，并将输入的参数传递给它进行处理。执行结果会直接显示在终端中。</li>
+<li>例如，输入 <code>date</code> 命令，系统会立即返回当前的日期和时间信息。</li>
+</ul>
+</li>
+<li><strong>代码</strong>
+<ul>
+<li>代码需要经过特定的处理才能执行。对于编译型语言（如 C、C++），代码需要先使用编译器进行编译，生成可执行文件，然后再运行该可执行文件。对于解释型语言（如 Python、Ruby），代码可以直接由解释器逐行解释执行。</li>
+<li>例如，对于上述 Python 代码，需要在终端中使用 <code>python</code> 解释器来执行：</li>
+</ul>
+</li>
+</ul>
+<p>bash</p>
+<pre><code class="language-bash">python hello.py
+</code></pre>
+<h3 id="复杂度和功能">复杂度和功能</h3>
+<ul>
+<li><strong>命令</strong>
+<ul>
+<li>命令通常用于完成相对简单、单一的任务，如文件操作、进程管理、网络配置等。虽然有些命令可以通过组合使用或添加复杂的选项来实现较为复杂的功能，但总体来说，命令的功能相对有限。</li>
+<li>例如，<code>cp</code> 命令用于复制文件，<code>mv</code> 命令用于移动或重命名文件，它们的功能比较明确和单一。</li>
+</ul>
+</li>
+<li><strong>代码</strong>
+<ul>
+<li>代码可以实现非常复杂的功能，包括数据处理、算法实现、系统编程、网络编程等。通过使用各种编程语言的丰富库和工具，代码可以处理大规模的数据、实现复杂的业务逻辑。</li>
+<li>例如，一个 Python 脚本可以连接到数据库，查询数据，进行数据分析和可视化，这是单个命令很难完成的任务。</li>
+</ul>
+</li>
+</ul>
+<h3 id="灵活性和可维护性">灵活性和可维护性</h3>
+<ul>
+<li><strong>命令</strong>
+<ul>
+<li>命令的灵活性相对较低，因为它们的功能和参数是固定的。如果需要完成一些特定的任务，可能需要组合多个命令来实现，而且在不同的系统环境中，命令的使用方式和选项可能会有所不同。</li>
+<li>命令的维护相对简单，因为它们是系统提供的标准工具，一般不需要用户进行修改。</li>
+</ul>
+</li>
+<li><strong>代码</strong>
+<ul>
+<li>代码具有很高的灵活性，程序员可以根据具体需求编写各种逻辑和算法。代码可以根据不同的输入和条件进行动态调整，以实现不同的功能。</li>
+<li>代码的可维护性取决于代码的质量和结构。良好的代码结构和注释可以使代码易于理解和修改，但如果代码编写得混乱，维护起来会比较困难。</li>
+</ul>
+</li>
+</ul>
+<h2 id="环境变量的概念">环境变量的概念</h2>
+<h3 id="linux-环境变量">Linux 环境变量</h3>
+<h4 id="定义">定义</h4>
+<p>Linux 环境变量是全局变量，它可以被当前 Shell 进程及其所有子进程访问。环境变量通常用于存储系统运行时的一些重要信息，如系统路径、用户信息等。</p>
+<h4 id="特点">特点</h4>
+<ul>
+<li><strong>全局性</strong>：环境变量在整个系统范围内有效，不同的 Shell 进程都可以访问这些变量。</li>
+<li><strong>持久性</strong>：环境变量可以在系统启动时自动加载，并且可以通过配置文件进行持久化设置。</li>
+</ul>
+<h4 id="常见环境变量">常见环境变量</h4>
+<ul>
+<li><code>PATH</code>：存储系统查找可执行文件的路径，多个路径之间用冒号分隔。</li>
+<li><code>HOME</code>：当前用户的主目录。</li>
+<li><code>USER</code>：当前登录用户的用户名。</li>
+<li><code>LANG</code>：系统的语言环境设置。</li>
+</ul>
+<h4 id="使用方法">使用方法</h4>
+<ul>
+<li><strong>查看环境变量</strong>：可以使用<code>env</code> 或<code>printenv</code> 命令查看当前系统的所有环境变量。</li>
+</ul>
+<p>bash</p>
+<pre><code class="language-bash">env  # 显示所有环境变量
+printenv PATH  # 显示PATH环境变量的值
+</code></pre>
+<ul>
+<li><strong>设置环境变量</strong>：使用<code>export</code> 命令将一个 Shell 变量提升为环境变量。</li>
+</ul>
+<p>bash</p>
+<pre><code class="language-bash"># 定义一个Shell变量
+my_var=test
+# 将my_var提升为环境变量
+export my_var
+</code></pre>
+<ul>
+<li><strong>修改环境变量</strong>：可以直接重新赋值并使用<code>export</code> 命令更新环境变量。</li>
+</ul>
+<p>bash</p>
+<pre><code class="language-bash">export my_var=new_value
+</code></pre>
+<ul>
+<li><strong>删除环境变量</strong>：使用<code>unset</code> 命令删除环境变量。</li>
+</ul>
+<p>bash</p>
+<pre><code class="language-bash">unset my_var
+</code></pre>
+<h3 id="区别总结">区别总结</h3>
+<ul>
+<li><strong>作用范围</strong>：Shell 变量通常只在当前 Shell 进程及其子进程中有效，而环境变量在整个系统范围内有效。</li>
+<li><strong>持久性</strong>：Shell 变量是临时的，随着 Shell 进程的结束而销毁；环境变量可以通过配置文件实现持久化设置。</li>
+<li><strong>定义和使用方式</strong>：Shell 变量直接定义和使用，而环境变量需要使用<code>export</code> 命令进行定义和更新。</li>
+</ul>
+<h2 id="类比windowslinux系统文件结构">类比Windows，Linux系统文件结构</h2>
+<p>Linux 系统和 Windows 系统在文件结构上存在诸多差异，以下是两者的对比：</p>
+<ul>
+<li><strong>目录结构</strong>
+<ul>
+<li><strong>Linux 系统</strong>：采用单一的根目录 “/”，所有的文件和目录都从这个根目录派生出来，形成一个树形的分层组织结构。例如，“/home” 目录用于存放用户的个人文件和设置，“/var” 目录用于存放变量数据，如日志文件、数据库文件、缓存等245。</li>
+<li><strong>Windows 系统</strong>：有多个根，每个驱动器（如 C:、D: 等）都有自己的根目录，文件和目录是基于各个驱动器的根目录进行组织的。例如，“C:\Users” 目录下存放着用户的个人文件和设置，“C:\Windows” 目录包含了操作系统运行所需的文件和文件夹13。</li>
+</ul>
+</li>
+<li><strong>路径表示</strong>1
+<ul>
+<li><strong>Linux 系统</strong>：使用正斜杠 “/” 来表示目录和子目录之间的路径。例如，“/home/user/documents” 表示 “home” 目录下 “user” 文件夹中的 “documents” 文件夹。</li>
+<li><strong>Windows 系统</strong>：使用反斜杠 “\” 来表示路径。例如，“C:\Users\user\Documents” 表示 C 盘下 “Users” 文件夹中的 “user” 文件夹里的 “Documents” 文件夹。</li>
+</ul>
+</li>
+<li><strong>驱动器表示</strong>1
+<ul>
+<li><strong>Linux 系统</strong>：所有设备都被视为文件，它们以虚拟文件系统的形式存在于 “/dev” 目录下。例如，硬盘、U 盘等存储设备在 “/dev” 目录下都有对应的设备文件，要访问这些设备上的文件系统，需要将其挂载到目录树中的某个子目录上。</li>
+<li><strong>Windows 系统</strong>：使用字母标识符（如 C:、D:、E: 等）来表示不同的驱动器，每个驱动器都有自己独立的文件系统，用户可以直接通过驱动器盘符来访问相应的驱动器。</li>
+</ul>
+</li>
+<li><strong>文件命名规则</strong>1
+<ul>
+<li><strong>Linux 系统</strong>：对文件名区分大小写，“file.txt” 和 “File.txt” 在 Linux 中被视为两个不同的文件。</li>
+<li><strong>Windows 系统</strong>：默认情况下不区分大小写，但文件系统支持区分大小写。例如，在 Windows 中，“file.txt” 和 “File.txt” 通常被认为是同一个文件，除非在特定的设置下开启了区分大小写功能。</li>
+</ul>
+</li>
+<li><strong>隐藏文件</strong>1
+<ul>
+<li><strong>Linux 系统</strong>：使用以点开头的文件名（例如 “.config”）来表示隐藏文件，这些文件在默认情况下不会在文件管理器中显示，需要通过特定的设置或命令才能查看。</li>
+<li><strong>Windows 系统</strong>：文件名的隐藏属性通过文件属性设置来控制，用户可以通过右键点击文件，在属性对话框中勾选或取消 “隐藏” 属性来设置文件是否隐藏。</li>
+</ul>
+</li>
+<li><strong>文件系统类型</strong>1
+<ul>
+<li><strong>Linux 系统</strong>：支持广泛的文件系统，如 ext4、xfs、btrfs 等，这些文件系统通常提供更好的性能和可靠性，并且可以根据不同的需求进行选择和配置。</li>
+<li><strong>Windows 系统</strong>：主要使用 NTFS 文件系统，虽然功能丰富，但不如 Linux 中的文件系统种类多样，此外也支持 FAT32 等文件系统，用于特定的存储设备或场景。</li>
+</ul>
+</li>
+<li><strong>执行权限与文件属性</strong>1
+<ul>
+<li><strong>Linux 系统</strong>：文件系统具有对文件和目录的丰富权限控制，包括文件所有者、所有组、读写执行权限等，通过这些权限设置可以精细地控制不同用户对文件和目录的访问和操作。</li>
+<li><strong>Windows 系统</strong>：权限模型相对简单，具有读、写和执行等基本权限，通过访问控制列表（ACL）来管理文件和目录的权限，用户和组的概念与 Linux 类似，但管理方式有所不同。</li>
+</ul>
+</li>
+<li><strong>符号链接与快捷方式</strong>1
+<ul>
+<li><strong>Linux 系统</strong>：支持符号链接，允许创建指向其他文件或目录的链接，类似于 Windows 中的快捷方式，但符号链接在 Linux 中是文件系统的一部分，具有更高的灵活性和功能性。</li>
+<li><strong>Windows 系统</strong>：支持快捷方式，用户可以通过创建快捷方式来快速访问其他文件、文件夹或程序，快捷方式通常是一个独立的文件，指向目标文件或文件夹的路径。</li>
+</ul>
+</li>
+</ul>
+<h2 id="linux常用系统命令">Linux常用系统命令</h2>
+<h3 id="一-登录与注销">一、登录与注销</h3>
+<ol>
+<li>sudo useradd lilei  //添加用户 (不能被立即使用，需设置密码 sudo passwd lilei)</li>
+<li>sudo adduser lilei  //添加用户</li>
+<li>login  //登录或切换用户</li>
+<li>logout //注销用户（命令行）  exit(shell-退出控制台)</li>
+<li>shutdown -h 10  //10分钟后自动关机	shutdown -c  //取消</li>
+<li>halt(root用户)  //关闭所有进程后自动关机</li>
+<li>poweroff //同上</li>
+<li>shutdown -r 10 //十分钟后自动重启</li>
+<li>init 6  //重启 （0-停机，1-单用户，2-多用户，3-完全多用户，4-图形化，5-安全模式，6-重启）</li>
+<li>reboot  //重启</li>
+</ol>
+<h3 id="二-目录与文件">二、目录与文件</h3>
+<ol>
+<li>pwd   //显示当前工作目录</li>
+<li>mkdir mydir  //创建工作目录</li>
+<li>cd mydir  //更改工作目录</li>
+<li>rmdir mydir //删除工作目录</li>
+<li>touch myfile  //创建文件</li>
+<li>mv myfile mydir  //移动目录或文件</li>
+<li>cp myfile myfir  //复制目录或文件</li>
+<li>rm -rf mydir  //删除目录或文件</li>
+<li>ls -l myfile  //查看文件最后被编辑时间</li>
+<li>ls -lu myfile //查看文件最后被访问时间</li>
+<li>touch -at 01011212 myfile  //修改文件最后被访问时间</li>
+<li>ls //列出所有文件和目录</li>
+<li>ls -a //查看所有文件</li>
+<li>ls -i //显示文件索引节点号</li>
+<li>ls -l //详细显示</li>
+<li>ls -m //以逗号分隔</li>
+<li>sudo apt-get install tree</li>
+<li>tree -l//以树状图列出目录内容</li>
+<li>tree -a //所有</li>
+<li>tree -i //不以阶梯状</li>
+<li>tree -s  //列出文件或目录大小</li>
+<li>tree -t  //按更改时间</li>
+<li>file -b myfile  //显示目录或文件的详细信息</li>
+<li>stat myfile  //同上</li>
+</ol>
+<h3 id="三-文件内容显示">三、文件内容显示</h3>
+<ol>
+<li>cat &gt; myfile  //创建文件并编辑内容（ctrl+D结束编辑）</li>
+<li>cat -n myfile  //查看文件</li>
+<li>chmod [u/g/o/a][+/-/=][r/w/x] myfile  //更改文件权限u-user,g-group,o-others,a-all  .   +-添加,--删除,=重置   .r-read读（4），w-write写（2），x-execute执行（1）</li>
+<li>more myfile  //分页往后显示文件（Space空格）</li>
+<li>less myfile  //分页自由显示文件（Page Down / Page Up）</li>
+<li>head (-10) myfile  //指定显示文件前若干行（默认前10）</li>
+<li>tail (-10) myfile  //指定显示文件后若干行（默认后10）</li>
+</ol>
+<h3 id="四-文件内容处理">四、文件内容处理</h3>
+<p>sort myfile  //对文件内容进行排序</p>
+<p>sort -r myfile  //逆序</p>
+<p>uniq myfile  //检查文件中的重复内容</p>
+<p>grep （-c）‘a’ myfile  //在文件中查找指定内容 (显示行号)</p>
+<p>diff myfile01 myfile02  //对不同文件进行比较</p>
+<p>diff3 myfile01 myfile02 myfile03  //三个文件</p>
+<p>sdiff myfile01 myfile02  //合并</p>
+<p>cmp myfile01 myfile02  //通过字节对不同文件进行比较</p>
+<p>comm myfile01 myfile02  //对有序文件进行比较</p>
+<p>cut -b(-c)(-d) 2(3) myfile  //对文件内容进行剪切</p>
+<p>paste myfile02 myfile01 //对文件内容进行粘贴 02-）01</p>
+<p>wc （-参数） myfile  //对文件内容进行统计 （c-字符数,w-单词数,l-行数）</p>
+<h3 id="五-压缩">五、压缩</h3>
+<ol>
+<li>zip myfile.zip myfile  //压缩</li>
+<li>zip -d myfile.zip myfile  //添加</li>
+<li>zip -m myfile.zip myfile  //删除</li>
+<li>unzip -o myfile.zip  //解压（覆盖）</li>
+<li>unzip -n myfile.zip  //解压（不覆盖）</li>
+<li>zipinfo myfile.zip  //列出压缩文件信息</li>
+</ol>
+<h3 id="六-获取帮助">六、获取帮助</h3>
+<ol>
+<li>man ls  //获取帮助</li>
+<li>man -k ls  //不清楚完整名字</li>
+<li>whatis ls  //获取帮助</li>
+<li>help cd  / cd –help  //获取帮助 -d(简短描述) -s(用法简介)</li>
+<li>info who  //获取帮助</li>
+</ol>
+<h3 id="七-其他命令">七、其他命令</h3>
+<ol>
+<li>clear  //清楚屏幕信息</li>
+<li>echo xx  //显示文本  x=0  echo $x . echo -e $x . echo $(pwd)</li>
+<li>date  //显示日期和时间（+%y 年  +%m 月  +%d日）</li>
+<li>cal  //显示当前日期  cal -y</li>
+<li>ps  //查看当前进程  -A(所有)  U  lilei (用户lilei)</li>
+<li>kill -9 2315  //终止某一进程</li>
+<li>ps -ef | grep Jincheng</li>
+<li>pkill Jincheng</li>
+<li>killall Jincheng</li>
+<li>last  //显示最近登录系统的用户信息-6列</li>
+<li>history （10） //显示历史指令-默认1000行</li>
+<li>sudo adduser lilei sudo  //给普通用户赋予root权限</li>
+<li>sudo usermod -G sudo lilei  //同上</li>
+<li>alias l=’ls’  //定义命令别名</li>
+<li>unalias l  //删除别名  alias //列出别名</li>
+</ol>
+<h2 id=""></h2>
+<h2 id="命令行参数">命令行参数</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[三日报（1）]]></title>
+        <id>https://Lumis44.github.io/post/san-ri-bao/</id>
+        <link href="https://Lumis44.github.io/post/san-ri-bao/">
+        </link>
+        <updated>2025-01-22T10:07:17.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="协议">协议</h3>
+<p>协议就是一堆规定，规定的东西就得按照规定的填。非常大量的协议共同构成了我们目前所使用的网络</p>
+<h3 id="网络">网络</h3>
+<h4 id="物理层">物理层</h4>
+<p>物理设备，如主机等等</p>
+<h4 id="链路层">链路层</h4>
+<p>从电信号转化成其他硬盘能够读的一个帧</p>
+<h4 id="网络层">网络层</h4>
+<p>APR协议，IP协议</p>
+<blockquote>
+<p>IP：地址</p>
+</blockquote>
+<h4 id="传输层">传输层</h4>
+<p>TCP/UDP</p>
+<h4 id="应用层">应用层</h4>
+<p>HTTP/FTP</p>
+<blockquote>
+<h4 id="应用类的协议被包裹在一个tcp和udp等传输协层的协议中">应用类的协议被包裹在一个TCP和UDP等传输协层的协议中</h4>
+</blockquote>
+<h3 id="域名和dns">域名和DNS</h3>
+<h4 id="ip地址">ip地址</h4>
+<p>在公网上表示地址的东西</p>
+<h4 id="域名">域名</h4>
+<p>用于ip地址的替代，方便用户记忆和宣传</p>
+<h4 id="dns解析">DNS解析</h4>
+<p>一种解析域名为ip地址的方式</p>
+<h5 id="dns解析的本质">DNS解析的本质</h5>
+<p>向公网上的一个域名解析服务器（114.114.114.114）发送解析请求，这个服务器收到请求之后就会把这个域名转换为域名绑定的ip地址</p>
+<h3 id="端口">端口</h3>
+<p>端口并不适用一个真是村的在口子，而是通过程序实现的一种网络分流方式</p>
+<h5 id="端口的范围">端口的范围</h5>
+<p>0-65535</p>
+<blockquote>
+<p>端口号是用16位二进制表示的：所以可以有2的十六次方个不同的端口号，</p>
+<p>即65536个。其中，0被保留为无效端口</p>
+</blockquote>
+<h5 id="端口的意义">端口的意义</h5>
+<p>把互联网流量分流到适应它的程序里。0端口不存在，为非常端口</p>
+<h5 id="常见的端口">常见的端口</h5>
+<p>80（http）、443（https）、20（ftp）、21（ftp控制）、22（ssh）、3306（数据库）、8080</p>
+<blockquote>
+<p>https中s为加密</p>
+</blockquote>
+<h3 id="http协议报文结构">http协议报文结构</h3>
+<p><font style="color:rgb(51, 51, 51);">客户端发送一个HTTP请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据四个部分组成</font></p>
+<figure data-type="image" tabindex="1"><img src="https://Lumis44.github.io/post-images/1737548202549.png" alt="" loading="lazy"></figure>
+<ul>
+<li><strong><font style="color:rgb(51, 51, 51);">请求行</font></strong><font style="color:rgb(51, 51, 51);">（Request Line）：</font>
+<ul>
+<li><strong><font style="color:rgb(51, 51, 51);">方法</font></strong><font style="color:rgb(51, 51, 51);">：如 GET、POST、PUT、DELETE等，指定要执行的操作。</font></li>
+<li><strong><font style="color:rgb(51, 51, 51);">请求 URI</font></strong><font style="color:rgb(51, 51, 51);">（统一资源标识符）：请求的资源路径，通常包括主机名、端口号（如果非默认）、路径和查询字符串。</font></li>
+<li><strong><font style="color:rgb(51, 51, 51);">HTTP 版本</font></strong><font style="color:rgb(51, 51, 51);">：如 HTTP/1.1 或 HTTP/2。</font></li>
+</ul>
+</li>
+</ul>
+<p><font style="color:rgb(51, 51, 51);">请求行的格式示例：</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;GET /index.html HTTP/1.1&lt;/font&gt;</code></p>
+<ul>
+<li><strong><font style="color:rgb(51, 51, 51);">请求头</font></strong><font style="color:rgb(51, 51, 51);">（Request Headers）：</font>
+<ul>
+<li><font style="color:rgb(51, 51, 51);">包含了客户端环境信息、请求体的大小（如果有）、客户端支持的压缩类型等。</font></li>
+<li><font style="color:rgb(51, 51, 51);">常见的请求头包括</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;Host&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">、</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;User-Agent&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">、</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;Accept&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">、</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;Accept-Encoding&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">、</font><code>&lt;font style=&quot;color:rgb(51, 51, 51);&quot;&gt;Content-Length&lt;/font&gt;</code><font style="color:rgb(51, 51, 51);">等。</font></li>
+</ul>
+</li>
+<li><strong><font style="color:rgb(51, 51, 51);">空行</font></strong><font style="color:rgb(51, 51, 51);">：</font>
+<ul>
+<li><font style="color:rgb(51, 51, 51);">请求头和请求体之间的分隔符，表示请求头的结束。</font></li>
+</ul>
+</li>
+<li><strong><font style="color:rgb(51, 51, 51);">请求体</font></strong><font style="color:rgb(51, 51, 51);">（可选）：</font>
+<ul>
+<li><font style="color:rgb(51, 51, 51);">在某些类型的HTTP请求（如 POST 和 PUT）中，请求体包含要发送给服务器的数据。</font></li>
+</ul>
+</li>
+</ul>
+<h3 id="font-stylecolorrgb51-51-51url-统一资源定位器font"><font style="color:rgb(51, 51, 51);">URL - 统一资源定位器</font></h3>
+<p><font style="color:rgb(51, 51, 51);">URL 是一个网页地址。</font></p>
+<p><font style="color:rgb(51, 51, 51);">URL可以由字母组成，如&quot;runoob.com&quot;，或互联网协议（IP）地址： 192.68.20.50。大多数人进入网站使用网站域名来访问，因为 名字比数字更容易记住。</font></p>
+<p><font style="color:rgb(51, 51, 51);">Web浏览器通过URL从Web服务器请求页面。</font></p>
+<p><font style="color:rgb(51, 51, 51);">当点击 HTML 页面中的某个链接时，对应的 <a> 标签指向万维网上的一个地址。</font></p>
+<p><font style="color:rgb(51, 51, 51);">一个统一资源定位器(URL) 用于定位万维网上的文档。</font></p>
+<h3 id="font-stylecolorrgb51-51-51get请求和post请求font"><font style="color:rgb(51, 51, 51);">GET请求和POST请求</font></h3>
+<h4 id="二者区别">二者区别</h4>
+<ul>
+<li>GET请求参数是通过URL进行传递的，POST请求的参数包含在请求体当中。POST请求的参数包含在请求体当中。</li>
+</ul>
+<blockquote>
+<p>GET请求用户肉眼可见，而POST请求在请求体当中，相当于绕了个弯子，用户不能肉眼可见，但抓包可以看见</p>
+<p>但这时再进行加密，比如说转化为编码的形式，就算抓包肉眼也无法读，这样就更安全些，这就是为什么要用https和ftps。</p>
+</blockquote>
+<p>POST请求比GET请求更安全，因为参数直接暴露在URL中，所以，GET请求不能用来传递敏感信息</p>
+<ul>
+<li>GET请求再URL中传递的参数是有长度限制的（在http协议中并没有对URL的长度进行限制，限制是特定的浏览器以及服务器对他的限制，不同浏览器限制的长度不同），POST没有长度限制（最多2mb，大数据可以多次传送）</li>
+<li>GET请求进行URL编码（百分号编码），POST请求支持多种编码方式</li>
+<li>GET请求在浏览器回退的时候是无害的，POST请求会再次提交数据</li>
+</ul>
+<h4 id="重大区别">重大区别</h4>
+<figure data-type="image" tabindex="2"><img src="https://Lumis44.github.io/post-images/1737548192284.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>对于GET请求，浏览器会把http header（请求头）和data（数据）一起发送出去，服务器响应<font style="background-color:#FBDE28;">200</font>，请求成功。</li>
+<li>对于POST请求，浏览器先发送header，服务器会响应<font style="background-color:#FBDE28;">100</font>（已经收到请求的第一部分），浏览器再次发送data，服务器返回<font style="background-color:#FBDE28;">200</font>，请求成功</li>
+<li>在发GET请求时只能发GET请求，因为它只能通过URL去传递。但是POST请求在发送时发get请求</li>
+</ul>
+<blockquote>
+<p>也就是POST请求既可以在body里传POST请求的东西，又可以在URL里人为添加GET请求</p>
+</blockquote>
+<ul>
+<li>GET方法由于受到URL长度的限制，只能传递大约1024字节；POST传输的数据量大，可以达到2M</li>
+</ul>
+<h3 id="tcpip">TCP/IP</h3>
+<blockquote>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 是用于因特网 (Internet) 的通信协议。</font></p>
+</blockquote>
+<h5 id="font-stylecolorrgb51-51-51计算机通信协议computer-communication-protocolfont"><font style="color:rgb(51, 51, 51);">计算机通信协议（Computer Communication Protocol）</font></h5>
+<p><font style="color:rgb(51, 51, 51);">计算机通信协议是对那些计算机必须遵守以便彼此通信的的规则的描述。</font></p>
+<h5 id="font-stylecolorrgb51-51-51什么是-tcpipfont"><font style="color:rgb(51, 51, 51);">什么是 TCP/IP？</font></h5>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 是供已连接因特网的计算机进行通信的通信协议。</font></p>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 指传输控制协议/网际协议（</font><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">T</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">ransmission</font>****<font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);"> </font></strong><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">C</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">ontrol</font>****<font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);"> </font></strong><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">P</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">rotocol</font></strong><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">/</font><font style="color:rgb(51, 51, 51);"> </font><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">I</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">nternet</font>****<font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);"> </font></strong><em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">P</font></strong></em><strong><font style="color:rgb(51, 51, 51);background-color:rgb(236, 234, 230);">rotocol</font></strong><font style="color:rgb(51, 51, 51);">）。</font></p>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 定义了电子设备（比如计算机）如何连入因特网，以及数据如何在它们之间传输的标准。</font></p>
+<hr>
+<h5 id="font-stylecolorrgb51-51-51在-tcpip-内部font"><font style="color:rgb(51, 51, 51);">在 TCP/IP 内部</font></h5>
+<p><font style="color:rgb(51, 51, 51);">在 TCP/IP 中包含一系列用于处理数据通信的协议：</font></p>
+<ul>
+<li><font style="color:rgb(51, 51, 51);">TCP (传输控制协议) - 应用程序之间通信</font></li>
+<li><font style="color:rgb(51, 51, 51);">UDP (用户数据报协议) - 应用程序之间的简单通信</font></li>
+<li><font style="color:rgb(51, 51, 51);">IP (网际协议) - 计算机之间的通信</font></li>
+<li><font style="color:rgb(51, 51, 51);">ICMP (因特网消息控制协议) - 针对错误和状态</font></li>
+<li><font style="color:rgb(51, 51, 51);">DHCP (动态主机配置协议) - 针对动态寻址</font></li>
+</ul>
+<h5 id="font-stylecolorrgb51-51-51tcp-使用固定的连接font"><font style="color:rgb(51, 51, 51);">TCP 使用固定的连接</font></h5>
+<p><font style="color:rgb(51, 51, 51);">TCP 用于应用程序之间的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">当应用程序希望通过 TCP 与另一个应用程序通信时，它会发送一个通信请求。这个请求必须被送到一个确切的地址。在双方&quot;握手&quot;之后，TCP 将在两个应用程序之间建立一个全双工 (full-duplex) 的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">这个全双工的通信将占用两个计算机之间的通信线路，直到它被一方或双方关闭为止。</font></p>
+<p><font style="color:rgb(51, 51, 51);">UDP 和 TCP 很相似，但是更简单，同时可靠性低于 TCP。</font></p>
+<h5 id="font-stylecolorrgb51-51-51ip-是无连接的font"><font style="color:rgb(51, 51, 51);">IP 是无连接的</font></h5>
+<p><font style="color:rgb(51, 51, 51);">IP 用于计算机之间的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 是无连接的通信协议。它不会占用两个正在通信的计算机之间的通信线路。这样，IP 就降低了对网络线路的需求。每条线可以同时满足许多不同的计算机之间的通信需要。</font></p>
+<p><font style="color:rgb(51, 51, 51);">通过 IP，消息（或者其他数据）被分割为小的独立的包，并通过因特网在计算机之间传送。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 负责将每个包路由至它的目的地。</font></p>
+<h5 id="font-stylecolorrgb51-51-51ip-路由器font"><font style="color:rgb(51, 51, 51);">IP 路由器</font></h5>
+<p><font style="color:rgb(51, 51, 51);">当一个 IP 包从一台计算机被发送，它会到达一个 IP 路由器。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 路由器负责将这个包路由至它的目的地，直接地或者通过其他的路由器。</font></p>
+<p><font style="color:rgb(51, 51, 51);">在一个相同的通信中，一个包所经由的路径可能会和其他的包不同。而路由器负责根据通信量、网络中的错误或者其他参数来进行正确地寻址。</font></p>
+<h5 id="font-stylecolorrgb51-51-51tcpipfont"><font style="color:rgb(51, 51, 51);">TCP/IP</font></h5>
+<p><font style="color:rgb(51, 51, 51);">TCP/IP 意味着 TCP 和 IP 在一起协同工作。</font></p>
+<p><font style="color:rgb(51, 51, 51);">TCP 负责应用软件（比如您的浏览器）和网络软件之间的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 负责计算机之间的通信。</font></p>
+<p><font style="color:rgb(51, 51, 51);">TCP 负责将数据分割并装入 IP 包，然后在它们到达的时候重新组合它们。</font></p>
+<p><font style="color:rgb(51, 51, 51);">IP 负责将包发送至接受者。</font></p>
+<h3 id="证书">证书</h3>
+<ul>
+<li>证书的方法是一种点对点认证机制</li>
+</ul>
+<h5 id="常见的有公钥加密私钥解密">常见的有：公钥加密，私钥解密</h5>
+<blockquote>
+<p>所有与这个服务器通信的人都会获得公钥，通过公钥把自己要传给服务器的数据加密，加密不可逆，用公钥加密完不能用公钥解密回来，只有操作服务器的人接到公钥加密后的数据，用他的私钥去解密，才能获得数据，这就叫<font style="background-color:#FBDE28;">非对称加密</font>。</p>
+</blockquote>
+<ul>
+<li>
+<p>如何保证安全？：证书是在服务器上的，客户通过证书提供的公钥加密一串随机串，这个加密方式只有拥有私钥的人才能解密加密之后的内容，服务器收到这个加密后的<font style="background-color:#FBDE28;">随机串</font>用私钥解密。然后双方开始用这个随机串进行加密通信，实现完全点对点通信，中间没有任何人</p>
+</li>
+<li>
+<p>这种公钥私钥的加密方式通常利用一些数学上的难题作为防止被破解的机制：<br>
+超大素数的难解性（RSA），椭圆曲线的难解性（ECC）等。</p>
+<pre><code>现在的计算机很难解，如果量子计算机实现，可能会推翻这些加密方式，因为算力很大。
+</code></pre>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[测试]]></title>
+        <id>https://Lumis44.github.io/post/ce-shi/</id>
+        <link href="https://Lumis44.github.io/post/ce-shi/">
+        </link>
+        <updated>2025-01-22T09:45:30.000Z</updated>
+        <content type="html"><![CDATA[<p>哈哈哈哈哈哈哈哈哈我终于搭好了</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://Lumis44.github.io/post/hello-gridea/</id>
+        <link href="https://Lumis44.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="https://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
